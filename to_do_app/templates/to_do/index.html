@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+{% include 'nav.html' %}
+
+<h2>TO DO APP</h2>
+
+  <ul>
+    {% for day,task in to_do_list.items %}
+    <li>
+     <a href="{%url "task_day" day=day %}">
+      On {{day}}  {{task}}
+     </a>
+  
+    </li>
+  {% endfor %}
+  </ul>
+  
+
+{% endblock %}
