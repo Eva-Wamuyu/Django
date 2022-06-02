@@ -1,0 +1,57 @@
+{% extends './base.html' %}
+
+{% block content%}
+<div class="container">
+  <form class="w-50 m-auto" method="post" action="{% url 'form_view_class'%}"  id="form">
+    {% csrf_token %}
+    <div class="form-group">
+      {{form.name.label}}
+        {{form.name}}
+    
+    </div>
+    <div class="form-group">
+      {{form.userName.label}}
+      {{form.userName}}
+    
+    </div>
+    <div class="form-group">
+      {{form.photo.label}}
+      {{form.photo}}
+    
+    </div>
+    <div class="form-group">
+      {{form.email.label}}
+      {{form.email}}
+    
+    </div>
+    
+   
+
+
+    <button class="btn mt-3 btn-info">Submit</button>
+  </form>
+
+
+</div>
+
+
+
+
+
+
+<script>
+  var form = document.getElementById('form')
+  //sets = document.getElementById('id_name')
+  //sets.classList.add('form-control')
+  setz = document.querySelectorAll('input')
+  for(var i = 0; i < setz.length; i++){
+    setz[i].classList.add('form-control')
+  }
+
+
+
+
+
+</script>
+
+{% endblock %}
